@@ -1,15 +1,11 @@
-import json
 import hashlib
+import json
 from urllib import request
 
-
 fuzzdict = ['wifiMacAddress', 'IMEI', 'serial']
-
 tmplete = "{'parameters': 'notExist', 'coordinates': '[0.0,0.0]', 'cellularIP':'10.57.244.127', 'stat': 'isContent', 'brand': 'Android', 'model': 'AOSPonBullHead', 'UDID': 'NIMRCDv3ECEMSLZ4Mrdy4a4Ls9TqJrdZ', 'syncookies': 'notExist', 'availableMemory': '711258112', 'switch': 'isContent', 'hardware': 'bullhead', 'host': 'nikodeMacBook-Pro.local', 'tags': '2333', 'wifiList': '[TONGDUN-PHONE,38:17:c3:c0:06:c4,WPA2-PSK-CCMPESS,TONGDUNXY,38:17:c3:c0:06:c6,WPA2-PSK-CCMPESS,TONGDUN-GUEST,38:17:c3:c0:06:c1,WPA2-PSK-CCMPESS,TONGDUN-TEST,38:17:c3:c0:06:c3,WPA2-EAP-CCMPESS,TONGDUN,38:17:c3:c0:06:c0,WPA2-EAP-CCMPESS,TONGDUN-MODEL,38:17:c3:c0:06:c2,WPA2-PSK-CCMPESS,TONGDUNXY,38:17:c3:c0:06:d6,WPA2-PSK-CCMPESS,TONGDUN-PHONE,38:17:c3:c0:06:d4,WPA2-PSK-CCMPESS,TONGDUN-MODEL,38:17:c3:c0:06:d2,WPA2-PSK-CCMPESS,TONGDUN-GUEST,38:17:c3:c0:06:d1,WPA2-PSK-CCMPESS,TONGDUN,38:17:c3:c0:06:d0,WPA2-EAP-CCMPESS,TONGDUN-TEST,38:17:c3:c0:06:d3,WPA2-EAP-CCMPESS,,38:17:c3:c0:06:d5,WPA2-EAP-CCMPESS,TONGDUN-GUEST,38:17:c3:c0:09:01,WPA2-PSK-CCMPESS,TONGDUN-MODEL,38:17:c3:c0:09:02,WPA2-PSK-CCMPESS,TONGDUN-PHONE,38:17:c3:c0:09:14,WPA2-PSK-CCMPESS,TONGDUN-TEST,38:17:c3:c0:09:13,WPA2-EAP-CCMPESS,TONGDUN-MODEL,38:17:c3:c0:09:12,WPA2-PSK-CCMPESS,TONGDUN-GUEST,38:17:c3:c0:09:11,WPA2-PSK-CCMPESS,TONGDUN,38:17:c3:c0:09:10,WPA2-EAP-CCMPESS,TONGDUNXY,38:17:c3:c0:09:16,WPA2-PSK-CCMPESS]', 'device': 'bullhead', 'availableSD': '0', 'uevent': 'isContent', 'product': 'aosp_bullhead', 'radio': 'M8994F-2.6.30.0.68', 'serial': '0101168e5e533109', 'battery': '[2,89]', 'brightness': '255', 'displayRom': 'aosp_bullhead-userdebug8.1.0OPM3.171019.013eng.niko.20180801.1140082333', 'networkType': 'WiFi', 'ppp': 'isContent', 'totalSystem': '11521290240', 'userAgent': 'Dalvik/2.1.0(Linux;U;Android8.1.0;AOSPonBullHeadBuild/OPM3.171019.013)', 'custID': '133', 'existPipe': '0', 'totalMemory': '1902940160', 'algID': 'ANDAlg', 'adb': 'notExist', 'manufacturer': 'LGE', 'totalSD': '0', 'platform': 'AND', 'rooted': '1', 'isProxy': '1', 'time': '0', 'currentWifi': '[\"TONGDUN\",38:17:c3:c0:06:d0]', 'fingerprint': 'Android/aosp_bullhead/bullhead:8.1.0/OPM3.171019.013/niko08011140:userdebug/2333', 'id': 'OPM3.171019.013', 'hashCode': '0tIBrpogiFFSFyG3piN6uZN2BJ6ZESjZEAN8aIaDN3Q', 'timeZone': '[GMT+08:00,Asia/Shanghai]', 'timestamp': '1547507278461', 'bootloader': 'BHZ10k', 'availableSystem': '984272896', 'type': 'userdebug', 'wifiMacAddress': '64:BC:0C:83:CE:92', 'cpuABI': 'arm64-v8aarmeabi-v7aarmeabi', 'isVPN': '0', 'cpufreq': 'isContent', 'startupTime': '1547437106', 'board': 'bullhead', 'version': '8.1.0', 'IMEI': '354360070135439', 'existQemu': '0', 'sdkVersion': '4.2.2.1', 'misc': 'isContent', 'resolution': '[2.625,1080,1794,2.625,422.03,424.069]', 'IOPorts': 'isContent'}"
 changedict = json.load(open('./change.json', 'r'))
-
 basedata = ""
-
 dictvalue = ""
 
 
